@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宿泊者からの「これどうするの？」をAIに。| ハウスマニュアルAIコンシェルジュ β</title>
+<meta name="description" content="Wi-Fi、チェックアウト、ゴミ出し…毎回同じ質問に答える手間を減らす、民宿・Airbnb向けAIコンシェルジュ。既存のハウスマニュアルを登録するだけ。現在β版・先行導入施設を募集中。">
+
+<!-- ============================================================
+  Google Analytics (計測) を追加する場合はここに gtag.js を挿入
+  例:
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  Google Ads コンバージョンタグも同様にここへ追加してください。
+=============================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="logo">宿AI<span class="logo-sub">コンシェルジュ</span></div>
+    <a href="#contact" class="btn btn-ghost btn-small" data-track="cta_header">先行導入について相談する</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">民宿・Airbnb・貸別荘向け &nbsp;/&nbsp; β版・先行導入受付中</p>
+      <h1 class="hero-headline">
+        宿泊者からの<br>
+        <span class="hero-highlight">「これどうするの？」</span>を、AIに。
+      </h1>
+      <p class="hero-sub">
+        今お使いのハウスマニュアル（PDF・Word・紙でも可）を登録するだけ。<br class="br-pc">
+        24時間、宿泊者の質問にAIが答えるコンシェルジュを作ります。
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary" data-track="cta_hero_main">無料で導入について相談する</a>
+        <a href="#how" class="btn btn-text" data-track="cta_hero_sub">仕組みを見る ↓</a>
+      </div>
+      <p class="hero-disclaimer">※ 現在β版として先行導入施設を募集しています。実績数値は掲載していません。</p>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="paper-stack">
+        <div class="paper-doc">
+          <div class="doc-line doc-line--title"></div>
+          <div class="doc-line"></div>
+          <div class="doc-line"></div>
+          <div class="doc-line doc-line--short"></div>
+          <div class="doc-fold"></div>
+        </div>
+        <div class="chat-bubble chat-bubble--q">
+          <span class="chat-label">Guest</span>
+          Wi-Fiのパスワードは？
+        </div>
+        <div class="chat-bubble chat-bubble--a">
+          <span class="chat-label">AI</span>
+          Wi-Fi名は「Sunny201」、パスワードは「welcome2024」です。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM: タイムライン ============ -->
+  <section class="section problem">
+    <div class="wrap">
+      <p class="section-eyebrow">よくある夜</p>
+      <h2 class="section-title">オーナーのスマホは、<br class="br-mobile">今夜も鳴る。</h2>
+
+      <ol class="timeline">
+        <li class="timeline-item">
+          <span class="timeline-time">22:30</span>
+          <div class="timeline-msg">
+            <span class="timeline-who">宿泊者</span>
+            「Wi-Fiのパスワードはどこですか？」
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">23:10</span>
+          <div class="timeline-msg">
+            <span class="timeline-who">別の宿泊者</span>
+            「駐車場が分かりません」
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">翌朝 8:50</span>
+          <div class="timeline-msg">
+            <span class="timeline-who">宿泊者</span>
+            「チェックアウトはどうすればいいですか？」
+          </div>
+        </li>
+      </ol>
+
+      <p class="problem-punchline">
+        「これ、全部ハウスマニュアルに書いてあるのに……」
+      </p>
+      <p class="problem-body">
+        Wi-Fi、チェックイン・アウト、ゴミ出し、設備の使い方。<br>
+        一つひとつは小さな質問でも、少人数運営では積み重なって負担になります。<br>
+        外国人宿泊者だと、さらに翻訳や言い回しに時間がかかります。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION: 会話デモ ============ -->
+  <section class="section solution" id="solution">
+    <div class="wrap">
+      <p class="section-eyebrow">AIが最初の窓口になる</p>
+      <h2 class="section-title">オーナーが答える前に、<br class="br-mobile">AIが答える。</h2>
+      <p class="section-lead">
+        宿泊者はQRコードやURLから、いつも使っているチャットのようにAIへ質問するだけ。
+        登録されたハウスマニュアルの情報をもとに、AIが答えます。
+      </p>
+
+      <div class="demo-phone" role="img" aria-label="AIコンシェルジュとのチャット画面の例">
+        <div class="demo-phone-notch"></div>
+        <div class="demo-chat" id="demoChat">
+          <!-- populated by script.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS: 3 STEPS ============ -->
+  <section class="section how" id="how">
+    <div class="wrap">
+      <p class="section-eyebrow">使い方</p>
+      <h2 class="section-title">導入は、3ステップだけ。</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-visual step-visual--doc">
+            <div class="mini-doc"></div>
+          </div>
+          <span class="step-num">01</span>
+          <h3 class="step-title">ハウスマニュアルを登録</h3>
+          <p class="step-desc">今お使いのPDF・Word・Googleドキュメント・紙の資料をそのままお預かりします。</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">→</div>
+        <div class="step">
+          <div class="step-visual step-visual--ai">
+            <div class="mini-ai">AI</div>
+          </div>
+          <span class="step-num">02</span>
+          <h3 class="step-title">専用AI・QRコードを作成</h3>
+          <p class="step-desc">施設専用のAIコンシェルジュと、部屋に置くだけのQRコードをご用意します。</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">→</div>
+        <div class="step">
+          <div class="step-visual step-visual--guest">
+            <div class="mini-qr"></div>
+          </div>
+          <span class="step-num">03</span>
+          <h3 class="step-title">宿泊者がAIに質問</h3>
+          <p class="step-desc">宿泊者はQRを読み取って質問するだけ。オーナーの対応は減っていきます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="section capabilities">
+    <div class="wrap">
+      <p class="section-eyebrow">できること</p>
+      <h2 class="section-title">登録した情報の範囲で、<br class="br-mobile">answer します。</h2>
+
+      <div class="cap-grid">
+        <div class="cap-item"><span class="cap-icon">📶</span>Wi-Fi案内</div>
+        <div class="cap-item"><span class="cap-icon">🔑</span>チェックイン・アウト案内</div>
+        <div class="cap-item"><span class="cap-icon">📋</span>ハウスルール回答</div>
+        <div class="cap-item"><span class="cap-icon">🗑️</span>ゴミ出し方法</div>
+        <div class="cap-item"><span class="cap-icon">🚗</span>駐車場案内</div>
+        <div class="cap-item"><span class="cap-icon">🧺</span>設備・家電の使い方</div>
+        <div class="cap-item"><span class="cap-icon">❓</span>よくある質問対応</div>
+        <div class="cap-item"><span class="cap-icon">🌐</span>多言語での回答</div>
+        <div class="cap-item"><span class="cap-icon">📍</span>周辺情報の案内</div>
+        <div class="cap-item"><span class="cap-icon">🆘</span>緊急時の連絡先案内</div>
+      </div>
+
+      <p class="cap-note">
+        AIは<strong>オーナーが登録した情報をもとに</strong>回答します。登録されていない内容について、AIが独自に判断して答えることはありません。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE / AFTER ============ -->
+  <section class="section compare">
+    <div class="wrap">
+      <p class="section-eyebrow">紙・PDFとの違い</p>
+      <h2 class="section-title">探すハウスマニュアルから、<br class="br-mobile">聞けるハウスマニュアルへ。</h2>
+
+      <div class="compare-grid">
+        <div class="compare-col compare-col--before">
+          <h3 class="compare-label">これまで</h3>
+          <ol class="compare-flow">
+            <li>ハウスマニュアルを開く</li>
+            <li>該当ページを探す</li>
+            <li>情報を読む</li>
+          </ol>
+        </div>
+        <div class="compare-col compare-col--after">
+          <h3 class="compare-label">AIコンシェルジュ</h3>
+          <ol class="compare-flow compare-flow--after">
+            <li>聞く</li>
+            <li>答えが返ってくる</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MULTILINGUAL ============ -->
+  <section class="section multilingual">
+    <div class="wrap">
+      <p class="section-eyebrow">多言語対応</p>
+      <h2 class="section-title">日本語で登録した情報を、<br class="br-mobile">宿泊者の言語で。</h2>
+      <p class="section-lead">
+        オーナーは日本語のハウスマニュアルを登録するだけ。英語で聞かれれば英語で、
+        他の言語で聞かれればその言語で、AIが答えます。
+      </p>
+
+      <div class="lang-demo">
+        <div class="lang-demo-col">
+          <span class="lang-demo-label">オーナーが登録した内容（日本語）</span>
+          <div class="lang-demo-box lang-demo-box--source">
+            駐車場は建物裏の砂利スペースです。3番の看板の下に停めてください。
+          </div>
+        </div>
+        <div class="lang-demo-arrow" aria-hidden="true">⇄</div>
+        <div class="lang-demo-col">
+          <span class="lang-demo-label">Guest（英語で質問）</span>
+          <div class="lang-demo-box lang-demo-box--q">“Where is the parking lot?”</div>
+          <span class="lang-demo-label lang-demo-label--ai">AI（英語で回答）</span>
+          <div class="lang-demo-box lang-demo-box--a">“The parking lot is behind the building. Please park under sign No. 3.”</div>
+        </div>
+      </div>
+      <p class="multilingual-note">※ 対応言語や精度について、具体的な数値・保証はここでは示していません。回答の正確性は登録内容と質問内容によって変わります。</p>
+    </div>
+  </section>
+
+  <!-- ============ TARGET ============ -->
+  <section class="section target">
+    <div class="wrap">
+      <p class="section-eyebrow">想定している施設</p>
+      <h2 class="section-title">少人数運営で、<br class="br-mobile">問い合わせ対応が負担な宿泊施設へ。</h2>
+
+      <div class="target-tags">
+        <span class="target-tag">Airbnbホスト</span>
+        <span class="target-tag">民宿</span>
+        <span class="target-tag">ゲストハウス</span>
+        <span class="target-tag">貸別荘</span>
+        <span class="target-tag">一棟貸し</span>
+        <span class="target-tag">小規模ホテル</span>
+        <span class="target-tag">無人・省人化運営の宿泊施設</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section pricing">
+    <div class="wrap">
+      <p class="section-eyebrow">料金について</p>
+      <h2 class="section-title">現在はβ版のため、<br class="br-mobile">料金は個別にご相談しています。</h2>
+      <p class="section-lead">
+        市場検証の段階のため、一律の料金表はまだ公開していません。<br class="br-pc">
+        まずは今お使いのハウスマニュアルを見せていただき、AI化できる範囲や進め方を無料でご提案します。
+      </p>
+      <div class="pricing-note-box">
+        <p>先行導入いただく施設には、正式版よりも優遇した条件でのご案内を予定しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA / CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="wrap contact-inner">
+      <p class="section-eyebrow section-eyebrow--light">先行導入 募集中</p>
+      <h2 class="section-title section-title--light">
+        自分の宿でも使えるか、<br class="br-mobile">まずは話してみませんか。
+      </h2>
+      <p class="contact-lead">
+        現在、先行導入いただく施設を募集しています。今お使いのハウスマニュアルを見せていただき、
+        AI化できる範囲を無料でご提案します。15分ほどのオンライン相談です。
+      </p>
+      <a href="FORM_URL" class="btn btn-primary btn-large" id="mainCtaBtn" data-track="cta_form_submit" target="_blank" rel="noopener">
+        15分の無料相談を申し込む
+      </a>
+      <p class="contact-disclaimer">現状はβ版・需要検証中のサービスです。導入実績や効果を断定する数値の掲載は行っておりません。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 宿AIコンシェルジュ（個人開発・β版）</span>
+    <a href="FORM_URL" target="_blank" rel="noopener" data-track="cta_footer">お問い合わせ</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
