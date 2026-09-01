@@ -6,27 +6,16 @@
   - Tallyでフォーム作成・公開済み: https://tally.so/r/1Aabkg
   - 必須: お名前 / メールアドレス / 施設名 / 施設タイプ(選択式) / 現在ハウスマニュアルの有無(選択式)
   - 任意: 運営している部屋数・棟数 / 問い合わせで困っていること(自由記述)
-  - [ ] GitHub Pages公開後、Tallyの「Integrations → 送信後にリダイレクト」設定で `thanks.html` の公開後URL(例: `https://<ユーザー名>.github.io/<リポジトリ名>/thanks.html`)へ遷移するよう設定する(現状はTally標準の完了画面のまま)
+  - [x] GitHub Pages公開(`https://yudai0910sw.github.io/minshuku-ai-lp/`)後、Tallyの送信後リダイレクト先を `https://yudai0910sw.github.io/minshuku-ai-lp/thanks.html` に設定済み
 - [ ] `index.html` の `<head>` 内、GAコメント箇所にGA4計測タグ(gtag.js)を追加
 - [ ] `thanks.html` の `<head>` 内、GAコメント箇所にも同じgtag.jsを追加し、`generate_lead` イベントを発火させる(このページへの到達 = 問い合わせ完了として計測する設計にしてある)
 - [ ] Google Ads のコンバージョンタグも `thanks.html` に追加する(下記3章参照。CVは「フォーム到達」ではなく「thanks.html到達」で計測するのが正確)
 
 ## 2. GitHub Pagesへの公開
 
-- [ ] GitHubリポジトリを作成
-- [ ] `minshuku-ai-lp/` の中身(index.html / style.css / script.js / thanks.html)をpush
-  ```bash
-  cd minshuku-ai-lp
-  git init
-  git add index.html style.css script.js thanks.html
-  git commit -m "Initial LP"
-  git branch -M main
-  git remote add origin https://github.com/<ユーザー名>/<リポジトリ名>.git
-  git push -u origin main
-  ```
-- [ ] Settings → Pages で Source を `main` / `root` に設定
+- [x] GitHubリポジトリを作成し、GitHub Pagesで公開済み: https://yudai0910sw.github.io/minshuku-ai-lp/
 - [ ] 公開URLで実機(スマホ実機推奨)から表示確認。フォーム送信 → `thanks.html` に正しく着地するかも必ずテストする
-- [ ] 独自ドメインを使う場合は `CNAME` ファイルを追加
+- [ ] 独自ドメインを使う場合は `CNAME` ファイルを追加(未使用なら対応不要)
 
 ## 3. Google検索広告の始め方(初心者向け手順)
 
